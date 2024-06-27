@@ -67,7 +67,7 @@ const Freemoji: Plugin = {
         if (e.guildId !== channel.guild_id || e.animated) {
           message.content = message.content.replace(
             `<${e.animated ? "a" : ""}:${e.originalName ?? e.name}:${e.id}>`,
-            `https://cdn.discordapp.com/emojis/${e.id}.${e.animated ? "gif" : "png"}?size=48&quality=lossless`
+            `[${e.originalName ?? e.name}](https://cdn.discordapp.com/emojis/${e.id}.${e.animated ? "gif" : "png"}?size=48&quality=lossless)`
           );
           delete message.validNonShortcutEmojis[i];
         }
